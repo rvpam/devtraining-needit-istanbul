@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="1" default="13" label="State" max_length="40" name="state" type="string">
+            <choice>
+                <element label="Requested" sequence="0" value="13"/>
+                <element label="Awaiting Approval" sequence="1" value="14"/>
+                <element label="Approved" sequence="2" value="15"/>
+                <element label="Awaiting Feedback" sequence="3" value="16"/>
+                <element label="Closed Completed" sequence="4" value="3"/>
+                <element label="Withdrawn" sequence="5" value="8"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="Legal" label="Request type" mandatory="true" max_length="40" name="u_choice_4" type="string">
+            <choice>
+                <element label="Human resources" sequence="0" value="hr"/>
+                <element label="Facilities" sequence="1" value="Facilities"/>
+                <element label="Legal" sequence="2" value="Legal"/>
+                <element label="Your department choice" sequence="3" value="Your_choice"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="Legal1" label="What need" mandatory="true" max_length="40" name="u_choice_5" type="string">
+            <choice>
+                <element label="Human Resources 1" sequence="0" value="hr1"/>
+                <element label="Human ressources 2" sequence="1" value="hr2"/>
+                <element label="Facilities 1" sequence="2" value="Facilities 1"/>
+                <element label="Facilities 2" sequence="3" value="Facilities 2"/>
+                <element label="Legal1" sequence="4" value="Legal1"/>
+                <element label="Legal2" sequence="5" value="Legal2"/>
+                <element label="Your Department Choice 1" sequence="6" value="Your_Choice_1"/>
+                <element label="Your Department Choice 2" sequence="7" value="Your_Choice_2"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_glide_date_time_2" type="glide_date_time"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_reference_3" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="u_reference_3"/>
+        </index>
+    </element>
+</database>
